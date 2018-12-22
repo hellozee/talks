@@ -1,10 +1,36 @@
-How are buttons drawn?
+How are buttons drawn on the screen?
 
 Kuntal Majumder
 https://github.com/hellozee/talks/x11/
 zee@hellozee.me
 
-* Wow icons, cursors, click..click
+* Who am I?
 
-* Lets start from the basics 
+* 
+- Wow how does the cursor move along with the mouse?
+- The icons respond too, holy cow.
+- Yes, now I can take my time to type out the phone number.
 
+* How all this works?
+
+* Ouch!
+.image media/Linux_Graphics_Stack_2013.svg _ 900
+
+* Lets take it easy
+.image media/client_server.png 500 _
+
+* Building up
+.image media/Xlib_and_XCB_in_the_X_Window_System_graphics_stack.svg
+
+* The X11 protocol
+https://www.x.org/releases/X11R7.5/doc/x11proto/proto.pdf
+.image media/X11_display_server_protocol.svg _ 700
+
+* So what is this thing called wayland doing in my PC?
+.image media/Wayland_display_server_protocol.svg 570 _
+
+* Explanation Time
+.image media/Free_and_open-source-software_display_servers_and_UI_toolkits.svg _ 1000
+
+* A quote by someone you may know, ;D
+Learn 3 things in life. A version control system, a programming language and how to speak in public.
