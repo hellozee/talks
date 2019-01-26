@@ -1,0 +1,120 @@
+- intro
+- my experience with linux and rpi
+- disclaimer
+- raspbian
+ - a debian stable derivative
+ - officially supported by the rpi foundation
+ - normal, w/o desktop  and lite version
+ - lite version : barebones doesn't come with a desktop
+ - normal is the fully fledged and requires a 8GB SD card, w/o desktop is self
+   explanatory.
+ - current version is stretch, current stable
+ - uses apt since debian
+ - lets upgrade our packages first
+ - sudo apt update
+ - sudo apt upgrade
+ - lets install something cool, install cowsay
+ - hacking the wpa_supplicant manually
+ - creating a new user
+ - lets get our password first
+ - passwd
+ - sudo adduser <username>
+ - wow there is a folder /home/<username>
+ - with some files
+ - where did they come from
+ - /etc/skel
+ - what folders do come when you normally add a new user on a desktop distro
+ - try doing update with sudo
+ - not working, lol
+ - do a groups
+ - using linux for a time, might have encountered it
+ - how to solve
+ - ssh pi, try groups, the sudo group
+ - usermod -aG 
+ - log into hellozee, boom it works now
+ - now a gui for doing everything, a gui
+ - enable vnc
+ - download realvnc viewer
+ - done with first part, congratulations
+
+basic_commands_brush_up
+ - touch
+ - cd
+ - cat
+ - echo
+ - nano
+ - ls
+ - file permissions
+ - chmod
+ - chgrp
+ - chown
+ - use man
+
+- ssh
+ - disclaimer : sorry winblows guys, nawt for you it is
+ - what is SSH?
+ - lets search about it on the web
+ - what does wikipedia says?
+ - definition, 3rd para
+ - keys hold the access credential, similar to names and passwords
+ - but more powerful single sign on system
+ - mean same thing can be used in multiple places
+ - private and public keys
+ - private key remains on the system, is used to access the remote system 
+   and is used to decrypt information that is exchanged in the SSH protocol
+ - dont share them
+ - public keys are shared, used to encrypt information
+ - ssh-keygen, file the keys, one is private and another public
+ - into the pi now
+ - mkdir .ssh
+ - cd .ssh
+ - touch authorized_keys
+ - chmod 700 ~/.ssh/
+ - chmod 600 ~/.ssh/authorized_keys
+ - open /etc/ssh/sshd_config
+ - disable password authentication
+ - restart the server
+ - we can log in with ssh keys now, boom
+ - scp filename host@hostaddress:location
+ - the reverse
+ - -r flag for copying folders
+ - copying things is so tiresome, I don't like it
+ - sshfs to rescue, mount the remote file system onto your local machine
+ - first install sshfs on your machine
+ - mkdir <mountpoint>
+ - sshfs <remote> <mountpoint>
+ - woah, can we do something more
+ - yup vnc time, we enabled that in the last section and downloaded realvnc
+ - enter the address and now you dont need a monitor, bingo
+
+file_system
+ - lsblk, listing partitions - 2 partitions
+ - one is the boot partition and another the root partition
+ - boot is fat formatted small, root is large and ext4
+ - boot contains, rpi firmwire, the linux kernel and some config files
+ - all the files used by os
+ - mostly named as /dev/mmcblk0 the sd card
+ - and partitions follow p1 and p2
+ - pi doesn't use a bootloaded like traditional pcs
+ - looks for the first partition and loads bootcode.bin, others sequencially
+
+hacker_time
+ - setting up a cronjob
+ - crontab -e
+ - the default format
+ - simple echo command
+ - what we can achieve with it
+
+cross_compiling
+ - use the sshfs now
+ - first write a python hello world program
+ - then write a c helloworld
+ - pi doesn't have much power
+ - compiling a program might take a lot of time
+ - and might overheat the pi, damaging it 
+ - then a golang helloworld
+ - demonstrate a cross compiling example with go
+ - GOOS=linux GOARCH=arm GOARM=5
+ - thats magic
+
+enough_today_i_guess_see_ya_next_time
