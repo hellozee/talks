@@ -1,0 +1,31 @@
+Linux inside Raspberry Pi
+
+Kuntal Majumder
+https://github.com/hellozee/talks/rasp-linux
+zee@hellozee.me
+
+* raspbian
+- that name sounds familiar, isn't it?
+- apt
+- wpa_supplicant
+- useradd
+- groups?
+- raspi-config
+
+* ssh
+- what is it?
+- why are we using it?
+- keys
+- scp
+- sshfs
+- vnc
+
+* the_filesystem
+- boot
+- root
+- sysfs?
+
+* being_a_hacker
+- cronjobs
+
+* cross_compiling
